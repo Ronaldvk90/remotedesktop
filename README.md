@@ -1,8 +1,5 @@
 # remotedesktop
 i3 remote desktop based on xrdp in docker
 
-
-Copy the .env.example to .env.
-Set the desired username and password in the .env file.
-
-If you want a wallpaper, feh is enabled and configured by default. It reads "wallpaper.jpg" from the "Pictures" dir of your home folder.
+Just compose up, thats all.
+You can use the adduser and deluser scripts to create users. It will be exactly the same as any linux distro to do. They will automaticaly be put in the sudo group and configure zsh as shell.

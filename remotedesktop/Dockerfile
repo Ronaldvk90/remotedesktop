@@ -1,5 +1,10 @@
 FROM debian:bookworm
 
+# Environment variables for locales
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+
 # Install the nescesarry packages
 RUN apt update ; apt upgrade -y
 RUN apt install git curl wget thunderbird libreoffice i3 firefox-esr unzip xrdp rxvt-unicode vim openssh-server dbus-x11 nemo zsh feh locales -y
@@ -18,8 +23,6 @@ RUN curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol |
 RUN mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 RUN curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 RUN apt update && apt install 1password -y
-COPY i3 /i3
-COPY i3status /i3status
 
 # Prepare the runtime
 COPY entrypoint.sh /entrypoint.sh

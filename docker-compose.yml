@@ -1,7 +1,6 @@
 services:
   remotedesktop:
     hostname: remotedesktop
-    env_file: .env
     build: remotedesktop/
     restart: unless-stopped
     image: ronaldvk90/remotedesktop:latest
